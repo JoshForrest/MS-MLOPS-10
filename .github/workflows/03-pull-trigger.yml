@@ -1,0 +1,4 @@
+on: [pull_request]
+  - name: Placeholder
+    run: |
+      echo "Code checks added here next."
