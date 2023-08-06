@@ -1,4 +1,11 @@
+name: Trigger Action on pull request
+
 on: [pull_request]
-  - name: Placeholder
-    run: |
-      echo "Code checks added here next."
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Placeholder
+      run: |
+        echo "Code checks added here next."
