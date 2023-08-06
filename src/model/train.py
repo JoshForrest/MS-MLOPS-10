@@ -9,7 +9,7 @@ import pandas as pd
 from sklearn.linear_model import LogisticRegression 
 from sklearn.model_selection import train_test_split
 
-# change for pull trigger testing
+# change for pull trigger testing 2
 # define functions
 def main(args):
     # TO DO: enable autologging
