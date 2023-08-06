@@ -32,6 +32,9 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: '3.8'
+    - name: Install mlflow
+      run: |
+        python -m pip install mlflow
     - name: Install Pytest
       run: |
         python -m pip install pytest
