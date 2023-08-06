@@ -17,9 +17,9 @@ jobs:
       uses: azure/login@v1
       with:
         creds: ${{secrets.AZURE_CREDENTIALS}}
-    - name: Azure create endpoint
-      run: |
-        az ml online-endpoint create --name vm-mslearn-mlops-jf10 --resource-group rg-mslearn-mlops --workspace-name mlw-mslear-mlops --file src/prod-endpoint.yml
+#    - name: Azure create endpoint
+#      run: |
+#        az ml online-endpoint create --name vm-mslearn-mlops-jf10 --resource-group rg-mslearn-mlops --workspace-name mlw-mslear-mlops --file src/prod-endpoint.yml
     - name: Azure deploy model to endpoint
       run: |  
         az ml online-deployment create --name diabetes-deployment --endpoint vm-mslearn-mlops-jf10 --resource-group rg-mslearn-mlops --workspace-name mlw-mslear-mlops --file src/deployment.yml --all-traffic
