@@ -19,4 +19,4 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Azure run job
       run: |  
-        az ml online-deployment create --name diabetes-deployment --endpoint vm-mslearn-mlops-jf10 -f /src/deployment.yml --all-traffic
+        az ml online-deployment create --name diabetes-deployment --endpoint vm-mslearn-mlops-jf10 --resource-group rg-mslearn-mlops --workspace-name mlw-mslear-mlops -f /src/deployment.yml --all-traffic
