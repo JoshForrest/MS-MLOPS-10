@@ -2,5 +2,5 @@ $schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.sch
 name: diabetes-deployment
 endpoint_name: vm-mslearn-mlops-jf10
 model: azureml:prod_model:1
-instance_type: Standard_DS3_v2
+instance_type: Standard_DS2_v2
 instance_count: 1
