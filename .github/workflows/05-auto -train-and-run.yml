@@ -1,6 +1,8 @@
 name: Run Azure Machine Learning job on push to main
 
-on: [push]
+on: 
+  push:
+    branches: [main]
 
 jobs:
   experiment:
