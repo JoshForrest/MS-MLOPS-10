@@ -18,7 +18,7 @@ jobs:
         creds: ${{secrets.AZURE_CREDENTIALS}}
     - name: Azure run job
       run: |  
-        az ml job create --file src/job.yml --resource-group rg-mslearn-mlops --workspace-name mlw-mslear-mlops
+        az ml job create --stream --file src/job.yml --resource-group rg-mslearn-mlops --workspace-name mlw-mslear-mlops
   production:
     needs: experiment
     runs-on: ubuntu-latest
