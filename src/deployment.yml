@@ -1,0 +1,10 @@
+$schema: https://azuremlschemas.azureedge.net/latest/managedOnlineDeployment.schema.json
+name: diabetes-deployment
+endpoint_name: vm-mslearn-mlops-jf10
+model:
+  name: prod_model
+  version: 1
+  local_path: src/model
+  model_format: mlflow
+instance_type: Standard_DS3_v2
+instance_count: 1
