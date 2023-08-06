@@ -1,11 +1,43 @@
-name: Trigger Action on pull request
+name: Trigger code checks on pull request
 
 on: [pull_request]
 
 jobs:
   job1:
+    name: linting
     runs-on: ubuntu-latest
     steps:
-    - name: Placeholder
+    - name: Check out repo
+      uses: actions/checkout@main
+    - name: Use Python version 3.8
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.8'
+    - name: Install Flake8
       run: |
-        echo "Code checks added here next."
+        python -m pip install flake8
+    - name: Install Pytest
+      run: |
+        python -m pip install pytest
+    - name: Run linting tests
+      run: | 
+        flake8 src/model/
+  job2:
+    name: unit-test
+    runs-on: ubuntu-latest
+    steps:
+    - name: Check out repo
+      uses: actions/checkout@main
+    - name: Use Python version 3.8
+      uses: actions/setup-python@v3
+      with:
+        python-version: '3.8'
+    - name: Install mlflow
+      run: |
+        python -m pip install mlflow
+    - name: Install Pytest
+      run: |
+        python -m pip install pytest
+    - name: Run unit test
+      run: |
+        python -m pytest tests/
